@@ -1,1 +1,56 @@
 @import "tailwindcss";
+
+@theme {
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee2: marquee2 40s linear infinite;
+  --animate-large-marquee: large-marquee 80s linear infinite;
+  --animate-large-marquee2: large-marquee2 80s linear infinite;
+  --animate-fade-up: fade-up 1s 100ms both;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-400%);
+    }
+  }
+
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(400%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes large-marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+  
+  @keyframes large-marquee2 {
+    0% {
+      transform: translateX(200%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+      
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    100%  {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

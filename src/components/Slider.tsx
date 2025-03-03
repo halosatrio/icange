@@ -1,40 +1,43 @@
+import { memo, useEffect, useRef, useState } from "react";
+import cn from "classnames";
+
 const communityImages = [
   {
-    src: "/images/home/community/react_conf_fun.webp",
-    alt: "People singing karaoke at React Conf",
+    src: "/image-1.jpg",
+    alt: "Illustration 1",
   },
   {
-    src: "/images/home/community/react_india_sunil.webp",
-    alt: "Sunil Pai speaking at React India",
+    src: "/image-2.jpg",
+    alt: "Illustration 2",
   },
   {
-    src: "/images/home/community/react_conf_hallway.webp",
-    alt: "A hallway conversation between two people at React Conf",
+    src: "/image-3.jpg",
+    alt: "Illustration 3",
   },
   {
-    src: "/images/home/community/react_india_hallway.webp",
-    alt: "A hallway conversation at React India",
+    src: "/image-4.jpg",
+    alt: "Illustration 4",
   },
   {
-    src: "/images/home/community/react_conf_elizabet.webp",
-    alt: "Elizabet Oliveira speaking at React Conf",
+    src: "/image-5.jpg",
+    alt: "Illustration 5",
   },
   {
-    src: "/images/home/community/react_india_selfie.webp",
-    alt: "People taking a group selfie at React India",
+    src: "/image-6.jpg",
+    alt: "Illustration 6",
   },
   {
-    src: "/images/home/community/react_conf_nat.webp",
-    alt: "Nat Alison speaking at React Conf",
+    src: "/image-7.jpg",
+    alt: "Illustration 7",
   },
   {
-    src: "/images/home/community/react_india_team.webp",
-    alt: "Organizers greeting attendees at React India",
+    src: "/image-8.jpg",
+    alt: "Illustration 8",
   },
 ];
 
-function CommunityGallery() {
-  const ref = useRef();
+export function CommunityGallery() {
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const [shouldPlay, setShouldPlay] = useState(false);
   useEffect(() => {
@@ -49,7 +52,9 @@ function CommunityGallery() {
         rootMargin: `${window.innerHeight}px 0px`,
       }
     );
-    observer.observe(ref.current);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
     return () => observer.disconnect();
   }, []);
 
@@ -59,7 +64,7 @@ function CommunityGallery() {
     if (!isLazy) {
       return;
     }
-    const rootVertical = parseInt(window.innerHeight * 2.5);
+    const rootVertical = window.innerHeight * 2.5;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -73,7 +78,10 @@ function CommunityGallery() {
         rootMargin: `${rootVertical}px 0px`,
       }
     );
-    observer.observe(ref.current);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
     return () => observer.disconnect();
   }, [isLazy]);
   // ... or until it's been a while after hydration.
@@ -110,7 +118,13 @@ function CommunityGallery() {
   );
 }
 
-const CommunityImages = memo(function CommunityImages({ isLazy }) {
+interface CommunityImagesProps {
+  isLazy: boolean;
+}
+
+const CommunityImages = memo(function CommunityImages({
+  isLazy,
+}: CommunityImagesProps) {
   return (
     <>
       {communityImages.map(({ src, alt }, i) => (

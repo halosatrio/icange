@@ -1,58 +1,6 @@
-import Card from "@/components/Card";
-import { animate, motion, useMotionValue } from "motion/react";
-import { useEffect, useState } from "react";
-import useMeasure from "react-use-measure";
+import { CommunityGallery } from "@/components/Slider";
 
 export default function Home() {
-  const images = [
-    "image-1",
-    "image-2",
-    "image-3",
-    "image-4",
-    "image-5",
-    "image-6",
-    "image-7",
-    "image-8",
-  ];
-  const FAST_DURATION = 25;
-  const SLOW_DURATION = 75;
-
-  const [duration, setDuration] = useState(FAST_DURATION);
-  let [ref, { width }] = useMeasure();
-
-  console.log("width", width);
-
-  const xTranslation = useMotionValue(0);
-
-  const [mustFinish, setMustFinish] = useState(false);
-  const [rerender, setRerender] = useState(false);
-
-  useEffect(() => {
-    let controls;
-    let finalPosition = -width / 2 - 8;
-
-    if (mustFinish) {
-      controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
-        ease: "linear",
-        duration: duration * (1 - xTranslation.get() / finalPosition),
-        onComplete: () => {
-          setMustFinish(false);
-          setRerender(!rerender);
-        },
-      });
-    } else {
-      controls = animate(xTranslation, [0, finalPosition], {
-        ease: "linear",
-        duration: duration,
-        repeat: Infinity,
-        repeatType: "loop",
-        repeatDelay: 0,
-      });
-    }
-
-    return controls?.stop;
-  }, [rerender, xTranslation, duration, width]);
-
   return (
     <>
       <main>
@@ -189,7 +137,8 @@ export default function Home() {
           >
             Get in touch!
           </a>
-          <motion.div
+          <CommunityGallery />
+          {/* <motion.div
             className="absolute left-0 flex gap-4"
             style={{ x: xTranslation }}
             ref={ref}
@@ -205,7 +154,7 @@ export default function Home() {
             {[...images, ...images].map((item, idx) => (
               <Card image={item} key={idx} />
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
       </main>
       <footer className="grid grid-rows-1 justify-center lg:grid-cols-2 lg:gap-4 py-10 lg:px-52 xl:px-80">
