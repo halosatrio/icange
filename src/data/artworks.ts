@@ -1,0 +1,175 @@
+import type { ArtworkItem } from "../types";
+
+export const artworks: ArtworkItem[] = [
+  // Packaging (Priority - commercial work)
+  {
+    id: "packaging-001",
+    title: "Product Packaging I",
+    category: "packaging",
+    image: "/assets/packaging-001.png",
+    client: "Blanco Coffee",
+    year: "2024",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "packaging-002",
+    title: "Product Packaging II",
+    category: "packaging",
+    image: "/assets/packaging-002.png",
+    client: "Red Pine",
+    year: "2024",
+    aspectRatio: "portrait",
+  },
+  // Tarot Cards
+  {
+    id: "tarot-001",
+    title: "Tarot Card I",
+    category: "tarot",
+    image: "/assets/tarot-001.png",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "tarot-002",
+    title: "Tarot Illustration I",
+    category: "tarot",
+    image: "/assets/tarot-002.png",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "tarot-004",
+    title: "Tarot Card 1",
+    category: "tarot",
+    image: "/assets/tarot-004.png",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "tarot-005",
+    title: "Tarot Illustration II",
+    category: "tarot",
+    image: "/assets/tarot-005.png",
+    aspectRatio: "portrait",
+  },
+  // Illustrations (reduced to 10)
+  {
+    id: "illustration-001",
+    title: "Bandana Design III",
+    category: "illustration",
+    image: "/assets/ilustration-00001.jpg",
+    aspectRatio: "square",
+  },
+  {
+    id: "illustration-005",
+    title: "Character Study I",
+    category: "illustration",
+    image: "/assets/ilustration-00005.jpg",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "illustration-010",
+    title: "Illustration I",
+    category: "illustration",
+    image: "/assets/ilustration-00010.jpg",
+    aspectRatio: "landscape",
+  },
+  {
+    id: "illustration-015",
+    title: "Illustration II",
+    category: "illustration",
+    image: "/assets/ilustration-00015.jpg",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "illustration-020",
+    title: "Illustration III",
+    category: "illustration",
+    image: "/assets/ilustration-00020.jpg",
+    aspectRatio: "square",
+  },
+  {
+    id: "illustration-025",
+    title: "Logo Design I",
+    category: "illustration",
+    image: "/assets/ilustration-00025.jpg",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "illustration-033",
+    title: "Logo Design II",
+    category: "illustration",
+    image: "/assets/ilustration-00033.jpg",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "illustration-039",
+    title: "Bandana Design III",
+    category: "illustration",
+    image: "/assets/ilustration-00039.jpg",
+    aspectRatio: "square",
+  },
+  {
+    id: "illustration-042",
+    title: "Character Study II",
+    category: "illustration",
+    image: "/assets/ilustration-00042.jpg",
+    aspectRatio: "landscape",
+  },
+  {
+    id: "illustration-044",
+    title: "Bandana Design I",
+    category: "illustration",
+    image: "/assets/ilustration-00044.jpg",
+    aspectRatio: "portrait",
+  },
+  // T-Shirt Designs
+  {
+    id: "shirt-001",
+    title: "Apparel Design I",
+    category: "tshirt",
+    image: "/assets/shirt-001.jpg",
+    aspectRatio: "square",
+  },
+  {
+    id: "shirt-003",
+    title: "Apparel Design II",
+    category: "tshirt",
+    image: "/assets/shirt-003.jpg",
+    aspectRatio: "square",
+  },
+  // Other works
+  {
+    id: "poster-001",
+    title: "Marketing Campaign",
+    category: "poster",
+    image: "/assets/poster-marketing-001.png",
+    client: "Various",
+    year: "2024",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "card-001",
+    title: "Playing Card Design",
+    category: "card",
+    image: "/assets/playing-card-001.png",
+    aspectRatio: "portrait",
+  },
+  {
+    id: "story-001",
+    title: "Story Illustration",
+    category: "story",
+    image: "/assets/story-001.png",
+    aspectRatio: "landscape",
+  },
+  {
+    id: "content-001",
+    title: "Social Media Content",
+    category: "content",
+    image: "/assets/content-media-001.png",
+    aspectRatio: "square",
+  },
+];
+
+export const navItems = [
+  { name: "Work", href: "#work" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
+];
